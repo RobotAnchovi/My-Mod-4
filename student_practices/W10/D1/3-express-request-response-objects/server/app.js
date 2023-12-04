@@ -38,7 +38,11 @@ app.get("/viewers/:id", (req, res) => {
     firstName: "Jason",
     lastName: "Whitlock",
     birthDate: "11/21/1985",
-    favoriteMovies: ["The Empire Strikes Back", "Get Out", "Signs"],
+    favoriteMovies: [
+      "The Empire Strikes Back",
+      "Get Out",
+      "Spider-Man: Far from Home",
+    ],
   };
   res.json(user);
 });
