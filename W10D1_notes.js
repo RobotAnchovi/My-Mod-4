@@ -46,7 +46,7 @@ Route Handlers
             Will be almost exclusively used for sending plain text
         json (always sends JSON)
             sets the headers and formatting for us
-        
+
         -------------
 
         render
