@@ -25,6 +25,7 @@ router.get("/people/:name/lookup", (req, res) => {
 module.exports = router;
 
 /*
+Expected Output:
 GET /people
 POST /people/:personId/likes
 DELETE /people/:personId
