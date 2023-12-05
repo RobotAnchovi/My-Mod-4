@@ -40,7 +40,7 @@ app.get("/viewers/:id", (req, res) => {
     birthDate: "11/21/1985",
     favoriteMovies: [
       "The Empire Strikes Back",
-      "Get Out",
+      "Avenger: Endgame",
       "Spider-Man: Far from Home",
     ],
   };
