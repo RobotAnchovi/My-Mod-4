@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
@@ -23,3 +23,11 @@ router.get("/people/:name/lookup", (req, res) => {
 });
 
 module.exports = router;
+
+/*
+GET /people
+POST /people/:personId/likes
+DELETE /people/:personId
+GET /people/best-dressed/comments
+GET /people/people/:name/lookup
+*/
