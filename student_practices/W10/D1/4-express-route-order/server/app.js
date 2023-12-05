@@ -13,12 +13,12 @@ app.get("/goodbye/until/forever", (req, res) => {
   res.send("So long. Farewell. Have a great life!");
 });
 
-app.get(["/goodbye", "/goodbye/*"], (req, res) => {
-  res.send("Goodbye, my friend!");
-});
-
 app.get("/goodbye/until/:time", (req, res) => {
   res.send(`Have a nice day! See you ${req.params.time}.`);
+});
+
+app.get(["/goodbye", "/goodbye/*"], (req, res) => {
+  res.send("Goodbye, my friend!");
 });
 
 const port = 5000;
