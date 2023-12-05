@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
+const dogsRouter = require("./routes/dogs");
 
 app.use(express.json());
+app.use("/dogs", dogsRouter);
 
 // Logger Middleware
 app.use((req, res, next) => {
@@ -10,6 +12,8 @@ app.use((req, res, next) => {
   });
   next();
 });
+
+// Use the dogs router for requests to /dogs
 
 // For testing purposes, GET /
 app.get("/", (req, res) => {
@@ -40,8 +44,11 @@ app.use((req, res, next) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  res.status(err.statusCode || 500);
-  res.json({ message: err.message });
+  console.error(err); // Log the error
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Something went wrong";
+  const stack = process.env.NODE_ENV !== "production" ? err.stack : undefined;
+  res.status(statusCode).json({ message, statusCode, stack });
 });
 
 const port = 5000;
