@@ -25,7 +25,7 @@ app.post("/test-json", (req, res, next) => {
   // send the body as JSON with a Content-Type header of "application/json"
   // finishes the response, res.end()
   res.json(req.body);
-  // next();
+  next();
 });
 
 // For testing express-async-errors
