@@ -12,7 +12,7 @@ If we try to send multiple responses from a single request, we will get an error
 app.use is explicitely for middleware
     The path string is not needed, but can be useful
     The path string does not have to match exactly. The beginning of the path must match the prefix.
-    !! The prefix is ignored in the path that is passed to the middleware !!
+    ! The prefix is ignored in the path that is passed to the middleware !
 
 Another method of control is passing something into next()
 
@@ -53,7 +53,7 @@ Environment Variables
         Development (dev)
         Testing - underutilized
             A way to mimic the production env locally so that we can test changes without interferring with UX.
-        
+
     What's the point?
         Handling of variables that change based on environment
         They are used to obscure sensitive data
@@ -64,7 +64,7 @@ Environment Variables
         Adding them to our scripts in our package.json
             This defeats the purpose since we are pushing our package.json to github
         Creating a .env file
-            !! We must add our .env to our .gitignore file !!
+            ! We must add our .env to our .gitignore file !
             To access variables in our .env, we have to install a couple packages
                 npm install dotenv
                 npm install dotenv-cli
@@ -75,7 +75,7 @@ Environment Variables
             We have to make sure that our .env file is on the same level as our package.json
         Env variables that have a value that is longer than a single word require "" if they are in the CLI, but not if they are in the .env
 
-    
+
     We can access environment variables using
         process.env.<variable name>
 
