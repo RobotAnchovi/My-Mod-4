@@ -1,46 +1,42 @@
--- This ensures that SQLite enforces FOREIGN KEY constraints
+-- Enforce FOREIGN KEY constraints
 PRAGMA foreign_keys = 1;
-DROP TABLE IF EXISTS instruments;
+
+-- Drop existing tables if they exist
+DROP TABLE IF EXISTS musicians_instruments;
 DROP TABLE IF EXISTS musicians;
+DROP TABLE IF EXISTS instruments;
 DROP TABLE IF EXISTS bands;
 
+-- Create bands table
 CREATE TABLE bands (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name VARCHAR(100)
 );
+
+-- Create musicians table
 CREATE TABLE musicians (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   first_name VARCHAR(100) NOT NULL,
-  last_name VARCHAR(100)
+  last_name VARCHAR(100),
+  band_id INTEGER,
+  FOREIGN KEY (band_id) REFERENCES bands(id)
 );
+
+-- Create instruments table
 CREATE TABLE instruments (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   type VARCHAR(100) NOT NULL
 );
---*====> Creating bands table <====
-CREATE TABLE bands (
-    id INTEGER PRIMARY KEY,
-    name TEXT NOT NULL
-);
 
---*====> Modifying musicians table for one-to-many relationship with bands <====
-ALTER TABLE musicians ADD COLUMN band_id INTEGER;
-ALTER TABLE musicians ADD FOREIGN KEY (band_id) REFERENCES bands(id);
-
---*====> Creating instruments table <====
-CREATE TABLE instruments (
-    id INTEGER PRIMARY KEY,
-    name TEXT NOT NULL
-);
-
---*====> Creating join table for many-to-many relationship between musicians and instruments <====
+-- Create join table for many-to-many relationship
 CREATE TABLE musicians_instruments (
-    musician_id INTEGER,
-    instrument_id INTEGER,
-    FOREIGN KEY (musician_id) REFERENCES musicians(id),
-    FOREIGN KEY (instrument_id) REFERENCES instruments(id)
+  musician_id INTEGER,
+  instrument_id INTEGER,
+  FOREIGN KEY (musician_id) REFERENCES musicians(id),
+  FOREIGN KEY (instrument_id) REFERENCES instruments(id)
 );
 
+-- Test: Displaying the structure of tables
 .mode 'box';
- SELECT * FROM bands;
- SELECT * FROM musicians;
+SELECT * FROM bands;
+SELECT * FROM musicians;
