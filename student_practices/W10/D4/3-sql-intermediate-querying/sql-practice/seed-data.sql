@@ -20,4 +20,15 @@ VALUES ('The Falling Box', 1, 2015, 25000),
   ('The King River', 5, 2017, 85000),
   ('Under Water', 5, 2020, 106000),
   ('Another Fork', 5, 2021, 140000);
-  
+
+--*====> Query 1: SELECT with a comparison operator <====
+SELECT * FROM albums WHERE num_sold >= 100000;
+
+--*====> Query 2: SELECT matching a range of values <====
+SELECT * FROM albums WHERE year BETWEEN 2018 AND 2020;
+
+--*====> Query 3: SELECT for attributes matching a list of values <====
+SELECT * FROM albums WHERE band_id IN (1, 3, 4);
+
+.mode 'box';
+SELECT * FROM albums WHERE title LIKE '%The%';
