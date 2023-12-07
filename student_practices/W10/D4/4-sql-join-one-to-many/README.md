@@ -4,13 +4,13 @@ Now, it's time to practice querying related data in one-to-many relationships.
 
 ## Getting started
 
-* Download the starter.
-* Run `npm install`
-* Run all the tests with `npm test`
+- Download the starter.
+- Run `npm install`
+- Run all the tests with `npm test`
 
-`cd` into the __sql-practice__ folder.
+`cd` into the **sql-practice** folder.
 
-Run SQLite on a database called __practice.db__.
+Run SQLite on a database called **practice.db**.
 
 In this practice, you will use these example table to make your queries:
 
@@ -65,9 +65,9 @@ For the following steps, you should formulate the SQL commands in the
 
 Formulate the SQL command that joins the `bands` and `albums` tables together,
 `SELECT`ing both the name of the band and the album title in the
-__sql-practice/step-1.sql__ file.
+**sql-practice/step-1.sql** file.
 
-Run the test specs in __test/step-1-spec.js__ file by running:
+Run the test specs in **test/step-1-spec.js** file by running:
 
 ```shell
 npm test test/step-1-spec.js
@@ -76,9 +76,9 @@ npm test test/step-1-spec.js
 ## Step 2: Filter a query across a joined table
 
 Formulate the SQL command that selects the name of each band that has an album
-with fewer than `20,000` sales in the __sql-practice/step-2.sql__ file.
+with fewer than `20,000` sales in the **sql-practice/step-2.sql** file.
 
-Run the test specs in __test/step-2-spec.js__ file by running:
+Run the test specs in **test/step-2-spec.js** file by running:
 
 ```shell
 npm test test/step-2-spec.js
@@ -88,7 +88,6 @@ npm test test/step-2-spec.js
 
 You are now able to query and filter a query across tables in a one-to-many
 relationship!
-
 
 [bands-albums-db-schema]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-10/bands-albums-db-schema.png
 [bands-albums-db-diagram-info]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-10/bands-albums-db-diagram-info.txt
