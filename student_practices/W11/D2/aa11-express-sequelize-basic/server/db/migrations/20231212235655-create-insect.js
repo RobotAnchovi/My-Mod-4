@@ -12,6 +12,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,
+        validate: {
+          isTitleCased(value) {
+            if (
+              value !== value.replace(/\b\w/g, (char) => char.toUpperCase())
+            ) {
+              throw new Error("Name must be title cased");
+            }
+          },
+        },
       },
       description: {
         type: Sequelize.STRING,
