@@ -32,6 +32,7 @@ app.post("/puppies/build", async (req, res, next) => {
     weightLbs,
     microchipped,
   });
+  await newPuppy.validate();
   await newPuppy.save();
   res.json({ message: "Puppy built!", data: newPuppy });
 });

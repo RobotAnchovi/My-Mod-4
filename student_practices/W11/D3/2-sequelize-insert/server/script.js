@@ -10,14 +10,14 @@ const build = async () => {
     // breed: Brittany Spaniel
     // microchipped: false
     // Your code here
-    // const newPuppy = Puppy.build({
-    //   name: "Trudy",
-    //   ageYrs: 2,
-    //   weightLbs: 38,
-    //   breed: "Brittany Spaniel",
-    //   microchipped: false,
-    // });
-    // await newPuppy.save();
+    const newPuppy = Puppy.build({
+      name: "Trudy",
+      ageYrs: 2,
+      weightLbs: 38,
+      breed: "Brittany Spaniel",
+      microchipped: false,
+    });
+    await newPuppy.save();
   } catch (err) {
     throw err;
   }
