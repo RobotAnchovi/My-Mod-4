@@ -11,7 +11,6 @@ module.exports = {
         key: "id",
       },
       onDelete: "CASCADE",
-      hooks: true,
     });
   },
 
