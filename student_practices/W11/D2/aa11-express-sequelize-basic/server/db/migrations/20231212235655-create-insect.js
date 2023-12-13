@@ -15,7 +15,7 @@ module.exports = {
         validate: {
           isTitleCased(value) {
             if (
-              value !== value.replace(/\b\w/g, (char) => char.toUpperCase())
+              value !== value.replace(/\b\w/g, (char) => char.toUpperCase()) //! /\b\w/g is a regex that matches the first letter of each word in a string
             ) {
               throw new Error("Name must be title cased");
             }
