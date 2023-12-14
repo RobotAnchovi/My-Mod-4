@@ -69,7 +69,7 @@ What is an N+1 query?
     O(1 + n^m) where n is the num of results from initial query and m is the number of additional queries per initial query result
 
 During your time here at a/A, don't worry about efficiency. Focus on getting your code to work, then you can go back and refactor.
-!! LAZY LOAD YOUR AGGREGATE DATA !!
+! LAZY LOAD YOUR AGGREGATE DATA !!
 
 
 SQL Injection Attacks
