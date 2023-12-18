@@ -5,7 +5,7 @@ const app = express();
 // app.use("/stylesheets", express.static("assets/css"));
 
 // Part 2
-// app.use(express.static("assets"));
+app.use(express.static("assets"));
 
 // Part 3
 app.use(express.static("assets/scripts"));
