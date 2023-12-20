@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Instrument extends Model {
     /**
@@ -11,16 +9,48 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Instrument.belongsTo(models.Store)
+      Instrument.belongsTo(models.Store);
     }
   }
-  Instrument.init({
-    name: DataTypes.STRING,
-    type: DataTypes.STRING,
-    storeId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Instrument',
-  });
+  Instrument.init(
+    {
+      name: DataTypes.STRING,
+      type: DataTypes.STRING,
+      storeId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "Instrument",
+      defaultScope: {
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
+      },
+      scopes: {
+        keyboard: {
+          attributes: {
+            exclude: ["createdAt", "updatedAt"],
+          },
+        },
+        getInstrument(string) {
+          return {
+            where: {
+              type: string,
+            },
+          };
+        },
+        getStoreId(storeId) {
+          return {
+            include: {
+              model: Store,
+              where: {
+                id: storeId,
+              },
+            },
+          };
+        },
+      },
+    }
+  );
   return Instrument;
 };
